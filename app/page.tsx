@@ -10,10 +10,13 @@ const COMPONENTS = {
 
 export default function Page() {
   const [componentName, setComponentName] = useState("Button");
+  const [param, setParam] = useState<string | null>("not set");
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
     const name = query.get("name");
+    setParam(name);
+
     if (name && name in COMPONENTS) {
       setComponentName(name);
     }
@@ -24,6 +27,7 @@ export default function Page() {
   return (
     <main style={{ padding: "2rem" }}>
       <h1>Component: {componentName}</h1>
+      <h1>Param: {param}</h1>
       <div style={{ marginTop: "2rem" }}>
         {Component ? <Component /> : "Not Found"}
       </div>
