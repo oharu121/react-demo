@@ -1,36 +1,20 @@
-"use client";
+import Link from "next/link";
 
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+const components = [
+  { name: "ScrollExample", path: "/scroll-example" },
+];
 
-const COMPONENTS = {
-  Button: dynamic(() => import("../components/Button")),
-  ScrollExample: dynamic(() => import("../components/ScrollExample")),
-};
-
-export default function Page() {
-  const [componentName, setComponentName] = useState("Button");
-  const [param, setParam] = useState<string | null>("not set");
-
-  useEffect(() => {
-    const query = new URLSearchParams(window.location.search);
-    const name = query.get("name");
-    setParam(name);
-
-    if (name && name in COMPONENTS) {
-      setComponentName(name);
-    }
-  }, []);
-
-  const Component = COMPONENTS[componentName as keyof typeof COMPONENTS];
-
+export default function Home() {
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Component: {componentName}</h1>
-      <h1>Param: {param}</h1>
-      <div style={{ marginTop: "2rem" }}>
-        {Component ? <Component /> : "Not Found"}
-      </div>
+    <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
+      <h1>Component Demo Index</h1>
+      <ul style={{ marginTop: "1rem", lineHeight: "2" }}>
+        {components.map((comp) => (
+          <li key={comp.name}>
+            <Link href={comp.path}>🔗 {comp.name}</Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
