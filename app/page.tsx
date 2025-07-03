@@ -1,8 +1,7 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 const COMPONENTS = {
   Button: dynamic(() => import("../components/Button")),
@@ -10,19 +9,23 @@ const COMPONENTS = {
 };
 
 export default function Page() {
-  const searchParams = useSearchParams();
-  const name = searchParams.get("name") || "Button";
+  const [componentName, setComponentName] = useState("Button");
 
-  const Component = useMemo(
-    () => COMPONENTS[name as keyof typeof COMPONENTS],
-    [name]
-  );
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const name = query.get("name");
+    if (name && name in COMPONENTS) {
+      setComponentName(name);
+    }
+  }, []);
+
+  const Component = COMPONENTS[componentName as keyof typeof COMPONENTS];
 
   return (
-    <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Component: {name}</h1>
+    <main style={{ padding: "2rem" }}>
+      <h1>Component: {componentName}</h1>
       <div style={{ marginTop: "2rem" }}>
-        {Component ? <Component /> : <p>Component not found</p>}
+        {Component ? <Component /> : "Not Found"}
       </div>
     </main>
   );
