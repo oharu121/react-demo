@@ -6,6 +6,7 @@ import { useMemo } from "react";
 
 const COMPONENTS = {
   Button: dynamic(() => import("../components/Button")),
+  ScrollExample: dynamic(() => import("../components/ScrollExample")),
 };
 
 export default function Page() {
