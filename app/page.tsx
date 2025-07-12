@@ -2,6 +2,8 @@ import Link from "next/link";
 
 const components = [
   { name: "ScrollExample", path: "/scroll-example" },
+  { name: "SafeAnimationBox", path: "/safe-animation-box" },
+  { name: "BrokenAnimationBox", path: "/broken-animation-box" },
 ];
 
 export default function Home() {
