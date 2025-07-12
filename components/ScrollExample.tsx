@@ -69,7 +69,7 @@ export default function ScrollExample() {
     <>
       {/* Floating bar: responsive position */}
       <div
-        className="fixed left-1/2 z-50 flex -translate-x-1/2 gap-2 md:gap-4 rounded-full bg-white/90 shadow-lg px-3 md:px-6 py-1.5 md:py-2 transition-all duration-300 floating-bar w-11/12 max-w-md md:w-auto"
+        className="fixed left-1/2 z-50 flex -translate-x-1/2 gap-2 md:gap-4 rounded-full bg-white/90 shadow-lg px-3 md:px-6 py-1.5 md:py-2 transition-all duration-300 floating-bar"
         style={{
           top: typeof window !== "undefined" && window.innerWidth > 768 ? 32 : undefined,
           bottom: typeof window !== "undefined" && window.innerWidth <= 768 ? 32 : undefined
