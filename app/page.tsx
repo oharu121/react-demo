@@ -9,6 +9,7 @@ const components = [
   { name: "ClickOutsideModal", path: "/click-outside-modal" },
   { name: "VideoPlayer", path: "/video-player" },
   { name: "FieldNotes", path: "/field-notes" },
+  { name: "FollowTheLeader", path: "/follow-the-leader" },
 ];
 
 export default function Home() {
