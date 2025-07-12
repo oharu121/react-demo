@@ -7,6 +7,7 @@ const components = [
   { name: "SafeAnimationBoxWithHooks", path: "/safe-animation-box-with-hooks" },
   { name: "AutofocusInput", path: "/autofocus-input" },
   { name: "ClickOutsideModal", path: "/click-outside-modal" },
+  { name: "VideoPlayer", path: "/video-player" },
 ];
 
 export default function Home() {

@@ -32,7 +32,7 @@ export default function ClickOutsideModal() {
         className="bg-gray-50 rounded-lg shadow-2xl px-8 py-6 min-w-[320px] max-w-[90vw] text-center animate-fadeIn"
       >
         <h2 className="text-2xl font-semibold mb-2 mt-0 text-gray-900">モーダル</h2>
-        <p className="text-gray-700">外側（グレーの部分）をクリックすると閉じます</p>
+        <p className="text-gray-700">外側をクリックすると閉じます</p>
       </div>
     </div>
   )
