@@ -1,10 +1,10 @@
 "use client";
-import SafeAnimationBoxWithHooks from "@/components/SafeAnimationBoxWithHooks";
+import FieldNotes from "@/components/FieldNotes";
 
 export default function Page() {
   return (
     <main className="min-h-screen flex items-center justify-center">
-      <SafeAnimationBoxWithHooks />
+        <FieldNotes />
     </main>
   );
 }

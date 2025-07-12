@@ -8,6 +8,7 @@ const components = [
   { name: "AutofocusInput", path: "/autofocus-input" },
   { name: "ClickOutsideModal", path: "/click-outside-modal" },
   { name: "VideoPlayer", path: "/video-player" },
+  { name: "FieldNotes", path: "/field-notes" },
 ];
 
 export default function Home() {
