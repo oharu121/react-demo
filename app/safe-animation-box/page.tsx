@@ -3,7 +3,7 @@ import SafeAnimationBox from "@/components/SafeAnimationBox";
 
 export default function Page() {
   return (
-    <main style={{ padding: "2rem" }}>
+    <main className="min-h-screen flex items-center justify-center">
       <SafeAnimationBox />
     </main>
   );

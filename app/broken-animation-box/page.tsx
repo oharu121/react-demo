@@ -3,7 +3,7 @@ import BrokenAnimationBox from "@/components/BrokenAnimationBox";
 
 export default function Page() {
   return (
-    <main style={{ padding: "2rem" }}>
+    <main className="min-h-screen flex items-center justify-center">
       <BrokenAnimationBox />
     </main>
   );
