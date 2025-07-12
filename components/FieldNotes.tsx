@@ -29,11 +29,11 @@ export default function FieldNotes() {
   });
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-10">
-      <article className="p-8 bg-white border border-blue-200 rounded-2xl shadow-lg max-w-xl w-full">
+    <div className="h-[80vh] max-h-screen flex items-center justify-center py-10">
+      <article className="p-8 bg-white border border-blue-200 rounded-2xl shadow-lg max-w-xl w-full h-full max-h-full">
         <h1 className="text-2xl font-bold mb-6 text-blue-700 tracking-tight">Field Notes</h1>
-        <div className="border border-blue-100 rounded-xl px-4 py-6 max-w-[600px] bg-blue-50 overflow-x-hidden w-full">
-          <ul className="m-0 p-0 h-[300px] overflow-auto overflow-x-hidden w-full flex flex-col mb-6 space-y-0.5">
+        <div className="border border-blue-100 rounded-xl px-4 py-6 max-w-[600px] bg-blue-50 overflow-x-hidden w-full h-full max-h-full">
+          <ul className="m-0 p-0 flex flex-col mb-6 space-y-0.5 w-full max-h-full overflow-y-auto overflow-x-hidden">
             {notes.map((msg, index) => {
               const isRight = index % 2 === 1;
               return (
