@@ -5,6 +5,7 @@ const components = [
   { name: "BrokenAnimationBox", path: "/broken-animation-box" },
   { name: "SafeAnimationBox", path: "/safe-animation-box" },
   { name: "SafeAnimationBoxWithHooks", path: "/safe-animation-box-with-hooks" },
+  { name: "AutofocusInput", path: "/autofocus-input" },
 ];
 
 export default function Home() {
