@@ -3,21 +3,21 @@ import React, { useRef, useEffect, useState } from "react";
 const sections = [
   {
     refName: "part1Ref",
-    title: "イントロダクション",
+    title: "第一部",
     desc: "最初のセクションへようこそ。このエリアでは、モダンな見た目のスクロール例を紹介します。",
     bg: "bg-gradient-to-br from-slate-50 to-indigo-100",
     color: "text-gray-900"
   },
   {
     refName: "part2Ref",
-    title: "特徴",
+    title: "第二部",
     desc: "ここでは、スムーズなアニメーションスクロールやレスポンシブデザインの特徴を紹介します。",
     bg: "bg-gradient-to-br from-emerald-50 to-emerald-200",
     color: "text-gray-900"
   },
   {
     refName: "part3Ref",
-    title: "はじめましょう",
+    title: "第三部",
     desc: "このパターンを自分のプロジェクトで使ってみませんか？スクロールして、その簡単さを体験してください！",
     bg: "bg-gradient-to-br from-pink-50 to-pink-200",
     color: "text-gray-900"
@@ -69,7 +69,7 @@ export default function ScrollExample() {
     <>
       {/* Floating bar: responsive position */}
       <div
-        className="fixed left-1/2 z-50 flex -translate-x-1/2 gap-4 rounded-full bg-white/90 shadow-lg px-6 py-2 transition-all duration-300 floating-bar"
+        className="fixed left-1/2 z-50 flex -translate-x-1/2 gap-2 md:gap-4 rounded-full bg-white/90 shadow-lg px-3 md:px-6 py-1.5 md:py-2 transition-all duration-300 floating-bar w-11/12 max-w-md md:w-auto"
         style={{
           top: typeof window !== "undefined" && window.innerWidth > 768 ? 32 : undefined,
           bottom: typeof window !== "undefined" && window.innerWidth <= 768 ? 32 : undefined
@@ -79,7 +79,7 @@ export default function ScrollExample() {
           <button
             key={section.title}
             className={
-              `font-semibold text-base px-6 py-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 ` +
+              `font-semibold text-sm md:text-base px-4 md:px-6 py-2 md:py-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 ` +
               `shadow-md ` +
               (activeIdx === idx
                 ? "bg-gradient-to-r from-indigo-500 to-cyan-400 text-white scale-105 ring-2 ring-cyan-300"
@@ -92,7 +92,7 @@ export default function ScrollExample() {
         ))}
       </div>
       {/* Horizontal scrollable sections */}
-      <div className="flex flex-row w-screen h-screen overflow-x-auto overflow-y-hidden scroll-snap-x-mandatory snap-x snap-mandatory">
+      <div className="flex flex-row w-screen h-screen overflow-x-auto overflow-y-hidden scroll-snap-x-mandatory snap-x snap-mandatory scrollbar-hide">
         {sections.map((section, idx) => (
           <div
             key={section.title}
@@ -110,6 +110,11 @@ export default function ScrollExample() {
           </div>
         ))}
       </div>
+      {/* Hide scrollbar cross-browser if Tailwind's plugin is not available */}
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
     </>
   );
 }
