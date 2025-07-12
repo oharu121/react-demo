@@ -6,6 +6,7 @@ const components = [
   { name: "SafeAnimationBox", path: "/safe-animation-box" },
   { name: "SafeAnimationBoxWithHooks", path: "/safe-animation-box-with-hooks" },
   { name: "AutofocusInput", path: "/autofocus-input" },
+  { name: "ClickOutsideModal", path: "/click-outside-modal" },
 ];
 
 export default function Home() {

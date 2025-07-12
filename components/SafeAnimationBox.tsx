@@ -41,7 +41,6 @@ export default function SafeAnimationBox() {
       <div
         ref={boxRef}
         className={`flex items-center justify-center select-none shadow-lg
-          transition-[width,height] duration-[1000ms]
           w-40 h-40
           transition-colors duration-500
           ${happy ? "bg-yellow-100" : "bg-blue-100"}
